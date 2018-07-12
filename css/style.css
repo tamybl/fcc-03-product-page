@@ -4,6 +4,9 @@
 :root {
     --font-title : 'Pacifico', cursive;
     --font-content: 'Open Sans', sans-serif;
+    /* Colours */
+    --color-base-1: #ffe3b5;
+    --color-base-2: #000;
 }
 
 * {
@@ -16,10 +19,16 @@ body {
     font-family: var(--font-content);
 }
 
+#header {
+    padding-bottom: 70px;
+    background: var(--color-base-1);
+}
+
 nav#nav-bar {
     background: #fff;
     display: grid;
     grid-template-columns: minmax(200px, 0.8fr) 1fr;
+    position: relative;
 }
 
 nav#nav-bar .logo-company {
@@ -47,6 +56,8 @@ nav#nav-bar .navigation {
     text-decoration: none;
     text-transform: uppercase;
     color: #666;
+    margin: 0 4px;
+    display: block;
 
 }
 
@@ -76,6 +87,7 @@ img {
 #header .image-product {
     width: 55%;
     max-width: 500px;
+    min-width: 260px;
     position: absolute;
     left: 10%;
     bottom: -15%;
@@ -92,4 +104,38 @@ img {
 
 #header .subtitle-site {
     margin: 10px 25% auto auto;
+}
+
+#main section {
+    min-height: 40vh;
+    text-align: center;
+}
+
+#main section h2 {
+    font-family: var(--font-title);
+    font-size: calc(16px + 1.2vw);
+}
+
+#main p {
+    padding: 10px 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+section#features {
+    background: var(--color-base-1);
+}
+
+@media screen and (max-width: 768px) {
+    nav#nav-bar .navigation {
+        position: absolute;
+        right: 0;
+        bottom: -160px;
+        width: 100%;
+        z-index: 100;
+        background: #fff;
+        padding: 12px;
+        /* display: block; */
+        display: none;
+    }
 }
